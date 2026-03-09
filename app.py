@@ -120,7 +120,7 @@ with st.form("essay_form", clear_on_submit=True):
 # ==========================================
 st.divider()
 
-with st.expander("🛠️ 시스템 관리 (비밀번호: 1234)"):
+with st.expander("🛠️ 시스템 관리"):
     pw = st.text_input("관리자 인증", type="password")
     if pw == "1234":
         if st.button(f"🔥 {selected_week} 데이터 전체 초기화"):
@@ -134,4 +134,5 @@ if not df.empty:
         # 명단에서는 에세이 본문(내용)을 제외하고 요약 정보만 표시
         show_cols = ["학번", "이름", "글자수", "제출시간"]
         st.dataframe(df[show_cols].iloc[::-1], use_container_width=True)
+
 
