@@ -83,7 +83,7 @@ with st.form("essay_form", clear_on_submit=True):
     content = st.text_area(
         "에세이 내용", 
         height=600,
-        placeholder="세미나 발제 및 논의 내용을 바탕으로 본인의 비판적 사유를 1,500자 이상 서술하세요."
+        placeholder="강독 텍스트 내용을 바탕으로 본인의 생각을 1,500자 이상 서술하세요."
     )
     
     submitted = st.form_submit_button(f"🚀 {selected_week} 에세이 최종 제출")
@@ -134,3 +134,4 @@ if not df.empty:
         # 명단에서는 에세이 본문(내용)을 제외하고 요약 정보만 표시
         show_cols = ["학번", "이름", "글자수", "제출시간"]
         st.dataframe(df[show_cols].iloc[::-1], use_container_width=True)
+
