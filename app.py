@@ -50,8 +50,8 @@ except Exception as e:
 # ==========================================
 # 4. 상단부: 주차 선택 및 현황판
 # ==========================================
-st.title("🎓 2026 대학원 세미나: 에세이 제출")
-st.markdown("##### 13주차 통합 온라인 과제 관리 시스템")
+st.title("🎓 2026 예술학 기초 : 에세이 제출")
+st.markdown("##### 온라인 과제 관리 시스템")
 
 # [주차 선택] 본문 상단 배치
 selected_week = st.selectbox(
@@ -152,4 +152,5 @@ if not df.empty:
     with st.expander("📋 제출 확인 명단 (최근순)"):
         # 내용 열은 명단에서 제외하고 표시
         show_cols = [c for c in df.columns if c != "내용"]
+
         st.dataframe(df[show_cols].iloc[::-1], use_container_width=True)
